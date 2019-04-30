@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>class&style</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+<h1>classAndStyle</h1>
+<div id="app">
+    <div class="static" v-bind:class="{active:isActive,'text-danger':hasError}">div</div>
+    <div class="static" v-bind:class="classObject">div</div>
+    <button v-on:click="funcClick()" >changeClass</button>
+</div>
+</body>
+</html>
+<script src="app.js"></script>
