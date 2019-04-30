@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue-计算属性</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+<div id="app">
+    <h1>计算属性缓存VS方法</h1>
+    <p>姓氏:{{ firstName }}</p>
+    <p>名字:{{ lastName }}</p>
+    <p>{{ message }}</p>
+    <p>{{ reversedMessage1 }} ,这种方式是利用计算属性缓存</p>
+    <p>{{ reversedMessage1 }}</p>
+    <p>{{ reversedMessage1 }}</p>
+    ————————————————
+    <p>{{ reversedMessage() }},方法每次都都会计算</p>
+    <p>{{ reversedMessage() }}</p>
+    <p>{{ reversedMessage() }}</p>
+    ————————————————
+    <p>{{ cp_now }}</p>
+    <p>{{ cp_now }}</p>
+    <p>{{ cp_now }}</p>
+    <hr/>
+    <h1>{{ fullName }}</h1>
+    <hr/>
+    <button v-on:click="funcClick()" >change the fullName</button>
+</div>
+</body>
+</html>
+<script src="app.js"></script>
