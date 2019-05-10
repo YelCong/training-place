@@ -1,0 +1,7 @@
+@import url("//unpkg.com/element-ui@2.8.2/lib/theme-chalk/index.css");
+
+.menu {
+    min-width: 180px;
+    width: 300px
+;
+}

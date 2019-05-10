@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+    var nav = [
+        {
+            "name": "/demo.html",
+            "entry": "/R/dist/js/demo.js",
+            "path": "/demo.html"
+        },
+        {
+            "name": "/note.html",
+            "entry": "/R/dist/js/note.js",
+            "path": "note-home"
+        },
+    ];
+
+    let nav = [
+        {
+            "index":"/demo.html",
+            "menu_name": "demo",
+            "entry": "/R/dist/js/demo.js",
+            "component_name": "demo"
+        },
+        {
+            "index":"/note.html",
+            "menu_name": "笔记",
+            "entry": "/R/dist/js/note.js",
+            "component_name": "note-home"
+        },
+    ];
+
+    var buffer = {};
+    nav.forEach(function (item) {
+        console.log(typeof item);
+        console.log(item.entry);
+        console.log(item.path);
+        buffer[item.name] = {
+            url: item.enter,
+            page: item.path
+        };
+    });
+    console.log(buffer);
+</script>
+</html>
