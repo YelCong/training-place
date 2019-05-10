@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+<div id="app">
+    <div id="if" style="border-bottom: 1px solid black">
+        <h1>IF</h1>
+        <div v-if="isA">isA</div>
+        <div v-if="isB">isB</div>
+        <div v-if="Math.random>0.5">
+            now u can see me
+        </div>
+        <div v-else>
+            now u don't
+        </div>
+        <div v-if="type === 'A'">
+            A
+        </div>
+        <div v-else-if="type === 'B'">
+            B
+        </div>
+        <div v-else-if="type === 'C'">
+            C
+        </div>
+        <div v-else>
+            Not A/B/C
+        </div>
+        <template v-if="isA">
+            <h1>template</h1>
+        </template>
+        用key管理可复用的元素
+        <template v-if="isA">
+            <label>Username</label>
+            <input placeholder="Enter your username">
+        </template>
+        <template v-else>
+            <label>Email</label>
+            <input placeholder="Enter your email address">
+        </template>
+        <template v-if="isA">
+            <label>Username</label>
+            <input placeholder="Enter your username" key="username-input">
+        </template>
+        <template v-else>
+            <label>Email</label>
+            <input placeholder="Enter your email address" key="email-input">
+        </template>
+    </div>
+    <div id="for" style="border-bottom: 1px solid black">
+        <h1>FOR</h1>
+            <div id="for-array">
+            <h2>数组的for</h2>
+            这里需要注意在for里面，我们同样拥有对父作用域属性的完全访问权限
+            <ul id="example-2">
+                <li v-for="(item, index) in items">
+                    {{ parentMessage }} - {{ index }} - {{ item.message }}
+                </li>
+            </ul>
+        </div>
+        <div id="for-object">
+            <h2>对象的for</h2>
+            <ul id="v-for-object" class="demo">
+                <li v-for="(value,name,index) in object ">
+                    {{index}}.{{name}}:{{ value }}
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div>
+        <h1>对象更改检查注意事项- 变异方法，非变异方法</h1>
+    </div>
+</div>
+</body>
+<script src="app.js"></script>
+</html>
