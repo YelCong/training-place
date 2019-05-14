@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://unpkg.com/vue"></script>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<div id="app">
+    <form method="post">
+        <h3>v-model 会忽略所有表单元素的 value、checked、selected 特性的初始值而总是将 Vue 实例的数据作为数据来源。你应该通过 JavaScript 在组件的 data
+            选项中声明初始值。</h3>
+        <h4>下面这个例子设置初始的value值就变得没有意义了</h4>
+        <div>
+            <b>文本</b><br/>
+            <input type="text" v-model="ipt1" placeholder="input1" value="111">
+            <p>{{ipt1}}</p>
+        </div>
+        <div>
+            <b>单个复选框</b><br/>
+            <textarea v-model='txt1' cols="30" rows="10" placeholder="多行文本">{{txt1}}</textarea>
+            <p>{{txt1}}</p>
+        </div>
+        <div>
+            <b>single checkbox</b><br/>
+            <input type="checkbox" id="checkbox" true-value="this t" false-value="this f" v-model="checked">
+            <label for="checkbox">{{ checked }}</label>
+            <br>
+            <span style="color: red">复选框值绑定: true-value & false-value</span>
+        </div>
+        <div id='example-3'>
+            <b>多个复选框checkbox</b><br/>
+            <input type="checkbox" id="jack" value="Jack" v-model="checkedNames">
+            <label for="jack">Jack</label>
+            <input type="checkbox" id="john" value="John" v-model="checkedNames">
+            <label for="john">John</label>
+            <input type="checkbox" id="mike" value="Mike" v-model="checkedNames">
+            <label for="mike">Mike</label>
+            <br>
+            <span>Checked names: {{ checkedNames }}</span>
+        </div>
+        <div id="example-4">
+            <b>单选框</b><br/>
+            <input type="radio" id="one" v-bind:value="v1" v-model="picked">
+            <label for="one">One</label>
+            <br>
+            <input type="radio" id="two" value="Two" v-model="picked">
+            <label for="two">Two</label>
+            <br>
+            <span>Picked: {{ picked }}</span>
+        </div>
+        <div id="example-5">
+            <b>选择框</b><br/>
+            <select v-model="selected">
+                <option disabled value="">请选择</option>
+                <option>A</option>
+                <option>B</option>
+                <option>C</option>
+            </select>
+            <span>Selected: {{ selected }}</span>
+        </div>
+        <div>
+            <b>多选</b><br/>
+            <select multiple v-model="ms">
+                <option disabled value=""></option>
+                <option v-for="(item,index) in sitems" v-bind:value="item">{{item.text}}</option>
+            </select>
+            <p>selected: {{ms}}</p>
+            <br>
+            <span style="color: red">注意看这里的option的value是可以一整个对象的</span>
+
+        </div>
+    </form>
+</div>
+</body>
+<script src="app.js"></script>
+</html>
