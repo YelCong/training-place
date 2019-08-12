@@ -1,0 +1,44 @@
+<script src="assest/vue.min.js"></script>
+<link rel="stylesheet" href="assest/ele/index.css">
+<script src="assest/ele/index.js"></script>
+<link rel="stylesheet" type="text/css" href="index.css">
+<div id="app">
+<el-row v-for="item in items">
+  <el-col :span="5" v-for="(o, index) in item" :key="o" :offset="1" :style="{marginBottom:'50px'}">
+    <el-card :body-style="{padding:'0px'}">
+      <div class="div-box">
+        <div class="div-action">
+          <div class="div-group">
+            <el-button type="text">操作按钮</el-button>
+            <el-button type="text">操作按钮</el-button>
+          </div>
+        </div>
+        <img  src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png" class="image">
+      </div>
+      <div style="padding: 14px;">
+        <span><input type="text" v:bind:value="o.id"></span>
+        <span>
+          <input type="text" :key="o.id" v-model:value="o.title" ref="input" @blur="rename(o.title)">
+          <span v-on:click="editTitle(o.id)"><i class="el-icon-edit"></i></span>
+        </span>
+        <div class="bottom clearfix">
+          <time class="time">{{ currentDate }}</time>
+          <el-button type="text" class="button">操作按钮</el-button>
+        </div>
+      </div>
+    </el-card>
+  </el-col>
+</el-row>
+
+<el-row>
+  <el-pagination
+  background
+  layout="prev, pager, next"
+  :total="1000"
+  :current-page = "curPage"
+  @current-change="pageChange"
+  >
+</el-pagination>
+</el-row>
+</div>
+<script src="index.js"></script>
