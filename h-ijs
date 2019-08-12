@@ -1,0 +1,40 @@
+ var Main = {
+  data() {
+    return {
+      currentDate: new Date(),
+      input:'',
+      curPage:1,
+      items:[[{id:1,title:"abc",readonly:true,isFocus:false,imgUrl:"https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"},
+      	{id:2,title:"def",readonly:false,isFocus:false,imgUrl:"https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"},
+      	{id:3,title:"eee",readonly:false,isFocus:false,imgUrl:"https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"},
+      	{id:4,title:"fff",readonly:false,isFocus:false,imgUrl:"https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"},],
+      	[{id:1,title:"abc",readonly:true,isFocus:false},
+      	{id:2,title:"def",readonly:false,isFocus:false},
+      	{id:3,title:"eee",readonly:false,isFocus:false},
+      	{id:4,title:"fff",readonly:false,isFocus:false},],
+      	[{id:1,title:"abc",readonly:true,isFocus:false},
+      	{id:2,title:"def",readonly:false,isFocus:false},
+      	{id:3,title:"eee",readonly:false,isFocus:false}]
+      ]
+    };
+  },
+  methods:{
+  	editTitle:function(val){
+  		console.log(val);
+  		this.$refs.input[val - 1].focus()
+  	},
+  	rename:function(aaa){
+  		console.log(aaa);
+  	},
+  	pageChange:function(a,b){
+  		//ajax......
+  		console.log(a);
+  		this.items = [
+  		   	{id:3,title:"eee",readonly:true,isFocus:false},
+      	{id:4,title:"fff",readonly:false,isFocus:false}	
+  		];
+  	}
+  }
+}
+var Ctor = Vue.extend(Main)
+new Ctor().$mount('#app')
