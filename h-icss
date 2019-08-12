@@ -1,0 +1,63 @@
+
+.time {
+    font-size: 13px;
+    color: #999;
+}
+
+.bottom {
+    margin-top: 13px;
+    line-height: 12px;
+}
+
+.button {
+    padding: 0;
+    float: right;
+}
+
+.image {
+    width: 100%;
+    display: block;
+}
+
+.clearfix:before,
+.clearfix:after {
+    display: table;
+    content: "";
+}
+
+.clearfix:after {
+    clear: both
+}
+
+input {
+    border: none;
+}
+
+.div-box {
+    width: 100%;
+    position: relative;
+
+}
+
+.div-box:hover .div-action{
+    display:block;
+}
+
+.div-action {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: grey;
+    opacity: 0.5;
+    display: none;
+
+}
+
+.div-group {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
